@@ -1,1 +1,15 @@
 
+#color-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 1.5mm;
+}
+
+.color-display {
+    width: 4cm;
+    height: 4cm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
