@@ -7,26 +7,30 @@
     <script type="module" src="/main.mjs"></script>
   </head>
   <body>
-    <h1>ランダムカラー</h1>
-    <div>
-      <div>
-	<label for="generation-config__color-count">
-	  個数
-	</label>
-	<input type="number" id="generation-config__color-count" min="1" value="15">
-      </div>
-      <div>
-	<button type="button" id="generate-button">生成</button>
-      </div>
-    </div>
-    <div>
-      <div id="color-container">
-      </div>
-      <template id="color-display-template">
-	<div class="color-display">
-	  <div class="color-display-code"></div>
+    <header class="header-container">
+      <h1>ランダムカラー</h1>
+    </header>
+    <main class="content-container">
+      <div class="content-row">
+	<div class="form-row">
+	  <label for="generation-config__color-count">
+	    個数
+	  </label>
+	  <input type="number" id="generation-config__color-count" min="1" value="15">
 	</div>
-      </template>
-    </div>
+	<div class="form-row">
+	  <button type="button" id="generate-button">生成</button>
+	</div>
+      </div>
+      <div class="content-row">
+	<div id="color-container">
+	</div>
+	<template id="color-display-template">
+	  <div class="color-display">
+	    <div class="color-display-code"></div>
+	  </div>
+	</template>
+      </div>
+    </main>
   </body>
 </html>

@@ -1,8 +1,26 @@
 
+.header-container h1 {
+    text-align: center;
+}
+
+.content-container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.content-row {
+    margin: 2mm 0;
+}
+
+.form-row {
+    text-align: center;
+    margin: 1mm 0;
+}
+
 #color-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: center;
     gap: 1.5mm;
 }
 
@@ -12,4 +30,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 1mm;
+}
+
+@media screen and (max-width: 20cm) {
+    .content-container {
+	width: 95.5%;
+	margin: 0 auto;
+    }
+
+    .color-display {
+	width: 20vw;
+	height: 20vw;
+    }
 }
