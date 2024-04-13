@@ -70,9 +70,20 @@ const isValidRGB = (r, g, b) => {
 
 const tryCount = 50;
 
-const generateRandomColor = () => {
+const generateAllColor = 0;
+const generateLightColor = 1;
+const generateDarkColor = 2;
+
+const generateRandomColor = (colorType) => {
     for (let i = 0; i < tryCount; ++i) {
-	const l = Math.random() * 100;
+	const l = (() => {
+	    if (colorType === generateDarkColor)
+		return Math.random() * 35;
+	    else if (colorType === generateLightColor)
+		return Math.random() * 35 + 65;
+	    else
+		return Math.random() * 100;
+	})();
 	const aStar = Math.random() * 250 - 125;
 	const bStar = Math.random() * 250 - 125;
 	const [x, y, z] = labToXYZ(l, aStar, bStar);
@@ -111,13 +122,26 @@ const createColorDisplay = (color) => {
     return colorDisplayFragment;
 };
 
+const generateWhichColor = () => {
+    const generateAllColorElt = document.getElementById("generation-config__generate-all-color");
+    const generateDarkColorElt = document.getElementById("generation-config__generate-dark-color");
+    const generateLightColorElt = document.getElementById("generation-config__generate-light-color");
+    if (generateDarkColorElt.checked)
+	return generateDarkColor;
+    else if (generateLightColorElt.checked)
+	return generateLightColor;
+    else
+	return generateAllColor;
+};
+
 const generateButtonClickListener = () => {
     const colorCountInput = document.getElementById("generation-config__color-count");
     const colorCount = colorCountInput.value;
     const colorContainer = document.getElementById("color-container");
+    const colorType = generateWhichColor();
     colorContainer.innerHTML = "";
     for (let i = 0; i < colorCount; ++i) {
-	const color = generateRandomColor();
+	const color = generateRandomColor(colorType);
 	if (color === null)
 	    continue;
 	const colorDisplay = createColorDisplay(color);

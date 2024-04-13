@@ -19,6 +19,20 @@
 	  <input type="number" id="generation-config__color-count" min="1" value="15">
 	</div>
 	<div class="form-row">
+	  <label for="generation-config__generate-all-color">
+	    <input type="radio" id="generation-config__generate-all-color" name="color-type" value="all" checked>
+	    すべての色
+	  </label>
+	  <label for="generation-config__generate-light-color">
+	    <input type="radio" id="generation-config__generate-light-color" name="color-type" value="light">
+	    明るい色
+	  </label>
+	  <label for="generation-config__generate-dark-color">
+	    <input type="radio" id="generation-config__generate-dark-color" name="color-type" value="dark">
+	    暗い色
+	  </label>
+	</div>
+	<div class="form-row">
 	  <button type="button" id="generate-button">生成</button>
 	</div>
       </div>
